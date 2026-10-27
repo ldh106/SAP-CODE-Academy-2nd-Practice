@@ -1,0 +1,23 @@
+<mvc:View controllerName="ncode.zc19w0205.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"    
+>
+    <Page id="page" title="{i18n>title}">
+        <Label text = "SAP 기술"></Label>
+        <Text text = "{/skillList/0/sName}"></Text>
+
+        <ComboBox items = "{/skillList}">
+            <items>
+                <core:Item key = "{sCode}" text = "{sName}"></core:Item>
+            </items>
+        </ComboBox>
+        <!-- <ComboBox >
+            <items>
+                <core:Item key = "F0001" text = "SAPUI5"></core:Item>
+                <core:Item key = "A0001" text = "ABAP Workbench"></core:Item>
+            </items>
+        </ComboBox> -->
+
+    </Page>
+</mvc:View>

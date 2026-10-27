@@ -1,0 +1,18 @@
+<mvc:View controllerName="ncode.zc19w0103.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+>
+    <Page id="page" title="{i18n>title}">
+        <l:HorizontalLayout >
+            <Label id = "Label1" text = "Last Name"></Label>
+            <Input id = "inpLastName" value = "Lim"/>
+            <Label text = "First Name"/>
+            <Input id = "inpFirstName" value = "Dong Han"/>
+            <Label text = "Leader"></Label>
+            <Input id = "inpLeader" value = "X"/>
+            <Button text = "Click" press = "onClick"></Button>
+            <CheckBox id = "chkLeader" text = "Leader"></CheckBox>
+            </l:HorizontalLayout>
+    </Page>
+</mvc:View>

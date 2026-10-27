@@ -1,0 +1,32 @@
+<mvc:View controllerName="ncode.zc19w0204.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f = "sap.ui.layout.form"
+    xmlns:core = "sap.ui.core"
+>
+    <Page id="page" title="{i18n>title}">
+        <f:SimpleForm >
+            <f:title>
+                <core:Title text = "Data Modeling 1차 복습"></core:Title>
+            </f:title>
+            <f:content>
+                <VBox >   
+                    <!-- // 1. 하나의 객체에 다 넣기                                     
+                    <Input id = "inpCatId1" value = "{mInfo>/catId/0}" description = "{mInfo>/catName/0}"/>                                            
+                    <Input id = "inpCatId2" value = "{mInfo>/catId/1}" description = "{mInfo>/catName/1}" />
+                    <Input id = "inpHospitalId" value = "{mInfo>/hospitalId/0}" description="{mInfo>/hospitalName/0}"   /> -->
+                    <!-- //2. 3개의 객체
+                    <Input id = "inpCatId1" value = "{cat1Info>/catId1}" description = "{cat1Info>/catName1}"/>                                            
+                    <Input id = "inpCatId2" value = "{cat2Info>/catId2}" description = "{cat2Info>/catName2}" />
+                    <Input id = "inpHospitalId" value = "{hospitalInfo>/hospitalId}" description="{hospitalInfo>/hospitalName}"/> -->
+
+                    <!-- 3.두 개의 모델
+                    <Input id = "inpCatId1" value = "{mCatInfo>/catId/0}" description = "{mCatInfo>/catName/0}"/>                                            
+                    <Input id = "inpCatId2" value = "{mCatInfo>/catId/1}" description = "{mCatInfo>/catName/1}" />
+                    <Input id = "inpHospitalId" value = "{mHospitalInfo>/hospitalId/0}" description="{mHospitalInfo>/hospitalName/0}"/> -->
+                </VBox>
+            </f:content>
+        
+        </f:SimpleForm>
+    </Page>
+</mvc:View>

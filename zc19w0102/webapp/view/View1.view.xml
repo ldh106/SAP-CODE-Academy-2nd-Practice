@@ -1,0 +1,8 @@
+<mvc:View controllerName="ncode.zc19w0102.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <Label text = "LastName"/>
+        <Input value = "LIM"></Input>
+    </Page>
+</mvc:View>
