@@ -1,0 +1,36 @@
+<mvc:View controllerName="ncode.zc19w0206.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core" 
+>
+    <Page id="page" title="{i18n>title}">
+        <HBox >
+            <ComboBox id = "cbBook" items="{bookM>/bookInfo}" >
+                <items>                
+                    <core:Item key = "{bookM>bookCode}" text="{bookM>bookName}"></core:Item>
+                </items>
+            </ComboBox>
+            <Button text = "검색" press = "onSearch"></Button>
+        </HBox>
+        <Panel expanded="true" expandable = "true">
+            <headerToolbar>
+                <Toolbar>
+                    <Title text="교재 정보" />
+                </Toolbar>
+            </headerToolbar>
+            <VBox >
+                <HBox >                    
+                    <Input value = "{bookModel>/bookCode}" editable="false" description="교재코드"></Input>
+                </HBox>                
+                <Input value = "{bookModel>/bookName}" editable="false" description="교재명"></Input>
+                <Input value = "{bookModel>/bookDate}" editable="false" description="교육일수"></Input>
+                <HBox >
+                    <Label text = "난이도"></Label>
+                    <ComboBox id = "cbGrade" items = "{gradeM>/gradeInfo}" editable="false">
+                        <core:Item  key = "{gradeM>key}" text = "{gradeM>text}" ></core:Item>
+                    </ComboBox>
+                </HBox>
+            </VBox>
+        </Panel>
+    </Page>
+</mvc:View>

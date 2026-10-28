@@ -7,11 +7,12 @@
         <Label text = "SAP 기술"></Label>
         <Text text = "{/skillList/0/sName}"></Text>
 
-        <ComboBox items = "{/skillList}">
+        <ComboBox id = "cbSkill" items = "{/skillList}" selectedKey="{/selectedScode}" selectionChange="onSelect"  >
             <items>
                 <core:Item key = "{sCode}" text = "{sName}"></core:Item>
             </items>
         </ComboBox>
+        <Button text = 'Search' press = "onSearch"></Button>
         <!-- <ComboBox >
             <items>
                 <core:Item key = "F0001" text = "SAPUI5"></core:Item>
