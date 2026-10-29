@@ -1,0 +1,20 @@
+<mvc:View controllerName="ncode.zc19w0104.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+>
+    <Page id="page" title="{i18n>title}">
+        <l:VerticalLayout >
+            <l:HorizontalLayout >
+                <Label id = "lSkillCode" text = "SkillCode"></Label>
+                <Input id = "inpSkillCode" value = "" ></Input>
+            </l:HorizontalLayout>
+                <Button id = "btnSearch" text = "Search" press = "onClick"></Button>
+            <l:HorizontalLayout >
+                <Label id= "lSkillName" text = "SkillName"></Label>
+                <Input id = "inpSkillName" value = ""></Input>
+            </l:HorizontalLayout>                
+            <CheckBox id = "chkGrade" text = "High Grade"></CheckBox>
+        </l:VerticalLayout>
+    </Page>
+</mvc:View>

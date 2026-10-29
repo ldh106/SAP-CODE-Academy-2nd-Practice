@@ -1,0 +1,60 @@
+<mvc:View controllerName="ncode.zc19w0105.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:layout = "sap.ui.layout"
+    xmlns:f = "sap.ui.layout.form"
+    xmlns:core = "sap.ui.core"
+>
+    <Page id="page" title="{i18n>title}">
+        <!-- <layout:VerticalLayout >
+            <layout:HorizontalLayout >
+                <Label id = "labSN" text = "노트북(SN)"></Label>
+                <Input id = "inpSN"></Input>
+                <Button text = "검색" press="onSearch"></Button>
+            </layout:HorizontalLayout>
+            <layout:HorizontalLayout >
+                <Label id = "labSC" text = "노트북"></Label>
+                <Input id = "inpSC"></Input>
+            </layout:HorizontalLayout>
+            <layout:HorizontalLayout >
+                <Label id = "labMC" text = "제조사"></Label>
+                <Input id = "inpMC"></Input>
+            </layout:HorizontalLayout>
+        </layout:VerticalLayout> -->
+        <Panel expanded="true" expandable="true" width="50%">
+            <headerToolbar>
+                <Toolbar >
+                    <Title text = "패널예시"></Title>
+                    <ToolbarSpacer ></ToolbarSpacer>
+                    <Button text="검색" press = "onSearch" icon = "sap-icon://search"></Button>
+                </Toolbar>
+            
+            </headerToolbar>
+            <content>
+                <Label id = "labSN" text = "노트북(SN)"></Label>
+                <Input id = "inpSN"></Input>
+            </content>
+        </Panel>
+
+        <f:SimpleForm > 
+            <f:title><core:Title text = "Form Title"></core:Title></f:title>
+            <f:toolbar>
+                <Toolbar >
+                    <content>
+                        <ToolbarSpacer ></ToolbarSpacer>
+                        <Button text = "검색2" icon = "sap-icon://search"></Button>
+                    </content>
+                </Toolbar>
+            </f:toolbar>
+            <f:content>
+                <core:Title text = "일반 정보"/>
+                    <Label text = "모델"/> <Input value = "RPO" editable = "false"/>
+                <core:Title text = "제조사 정보"></core:Title>
+                    <Label text = "제조사"></Label><Input value = "HP" editable = "false"/>
+            </f:content>
+        
+        
+        </f:SimpleForm>
+    </Page>
+</mvc:View>
+
