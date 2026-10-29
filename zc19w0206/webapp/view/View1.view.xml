@@ -12,25 +12,27 @@
             </ComboBox>
             <Button text = "검색" press = "onSearch"></Button>
         </HBox>
-        <Panel expanded="true" expandable = "true">
+        <Panel id = "pnInfo" expanded="true" expandable = "true">
             <headerToolbar>
                 <Toolbar>
                     <Title text="교재 정보" />
                 </Toolbar>
             </headerToolbar>
-            <VBox >
-                <HBox >                    
-                    <Input value = "{bookModel>/bookCode}" editable="false" description="교재코드"></Input>
-                </HBox>                
-                <Input value = "{bookModel>/bookName}" editable="false" description="교재명"></Input>
-                <Input value = "{bookModel>/bookDate}" editable="false" description="교육일수"></Input>
-                <HBox >
-                    <Label text = "난이도"></Label>
-                    <ComboBox id = "cbGrade" items = "{gradeM>/gradeInfo}" editable="false">
-                        <core:Item  key = "{gradeM>key}" text = "{gradeM>text}" ></core:Item>
-                    </ComboBox>
-                </HBox>
-            </VBox>
+            <content>
+                <VBox >
+                    <HBox >                    
+                        <Input value = "{bookModel>/bookCode}" editable="false" description="교재코드"></Input>
+                    </HBox>                
+                    <Input value = "{bookModel>/bookName}" editable="false" description="교재명"></Input>
+                    <Input value = "{bookModel>/bookDate}" editable="false" description="교육일수"></Input>
+                    <!-- <HBox >
+                        <Label text = "난이도"></Label>
+                        <ComboBox id = "cbGrade" items = "{gradeM>/gradeInfo}" editable="false">
+                            <core:Item  key = "{gradeM>key}" text = "{gradeM>text}" ></core:Item>
+                        </ComboBox>
+                    </HBox> -->
+                </VBox>
+            </content>
         </Panel>
     </Page>
 </mvc:View>

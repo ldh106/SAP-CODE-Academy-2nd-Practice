@@ -1,0 +1,23 @@
+{
+  "generationParameters": {
+    "generationDate": "Wed Oct 28 2026 06:15:07 GMT+0000 (Coordinated Universal Time)",
+    "generatorPlatform": "SAP Business Application Studio",
+    "serviceType": "None",
+    "metadataFilename": "",
+    "serviceUrl": "N/A",
+    "appName": "zc19w0210",
+    "appTitle": "[C19] Table 실습",
+    "appDescription": "An SAP Fiori application.",
+    "appNamespace": "ncode",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.120.2",
+    "enableEslint": true,
+    "enableTypeScript": false,
+    "showMockDataInfo": false,
+    "generatorVersion": "1.34.0",
+    "template": "Basic",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [],
+    "launchText": "To launch the generated application, run the following from the generated application root folder:\n\n```\n    npm start\n```"
+  }
+}

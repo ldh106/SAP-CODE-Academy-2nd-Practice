@@ -53,7 +53,8 @@ sap.ui.define([
             console.log(oItem);
             let oData = oItem.getObject();
             oView.getModel("bookModel").setData(oData);            
-            oView.byId("cbGrade").setSelectedKey(oData.bookGrade);                        
+            oView.byId("cbGrade").setSelectedKey(oData.bookGrade);
+            oView.byId("pnInfo").bindElement()                        
         }
     });
 });

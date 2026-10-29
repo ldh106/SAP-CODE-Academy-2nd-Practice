@@ -2,5 +2,25 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
+        <Panel id = "pnEmp" expandable="true" expanded="true">
+            <content>
+                <Button text = "사원정보" press = "onGetEmpInfo"></Button>
+                <Label text = "사원이름"></Label>
+                <HBox >
+                    <Input value = "{lastName}"></Input>
+                    <Input value = "{firstName}"></Input>
+                </HBox>
+            </content>
+        </Panel>                    
+        <Panel id = "pnStd" expandable="true" expanded="true">
+            <content>
+                <Button text = "학생정보" press = "onGetStdInfo"></Button>
+                <Label text = "학생이름"></Label>
+                <HBox >
+                    <Input value = "{lastName}"></Input>
+                    <Input value = "{firstName}"></Input>
+                </HBox>
+            </content>
+        </Panel>
     </Page>
 </mvc:View>

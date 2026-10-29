@@ -1,0 +1,54 @@
+<mvc:View xmlns:core="sap.ui.core" 
+    controllerName="ncode.zc19w0210.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <Panel expandable="true" expanded="true">
+            <HBox >
+                <Label text = "기술등급"></Label>
+                <ComboBox id = "cmbSkill" items = "{mInfo>/levelList}">
+                    <items>
+                        <core:Item key = "{mInfo>lCode}" text = "{mInfo>lName}"></core:Item>
+                    </items>
+                </ComboBox>
+                <Button text = "검색" press = "onSearch" ></Button>
+            </HBox>
+        </Panel>
+        <Table id = "tabSkill" items = "{mInfo>/skillList}" selectionChange="onChange" mode="SingleSelect">
+            <columns>
+                <Column ><header><Text text = "기술코드" ></Text></header></Column>
+                <Column ><header><Text text = "기술명"></Text></header></Column>
+                <Column ><header><Text text = "등급"></Text></header></Column>
+            </columns>
+            <items>
+                <ColumnListItem >
+                    <cells>
+                        <Text text = "{mInfo>sCode}"></Text>
+                        <Text text = "{mInfo>sName}"/>
+                        <Text text = "{mInfo>sLevel}"></Text>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        <Panel expandable="true" expanded="true">
+            <content>
+                <Table id = "tabRst" items = "{mInfo>/rst}">
+                    <columns>
+                        <Column ><header><Text text = "기술코드" ></Text></header></Column>
+                        <Column ><header><Text text = "기술명"></Text></header></Column>
+                        <Column ><header><Text text = "등급"></Text></header></Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem >
+                            <cells>
+                                <Text text = "{mInfo>sCode}"></Text>
+                                <Text text = "{mInfo>sName}"/>
+                                <Text text = "{mInfo>sLevel}"></Text>
+                            </cells>
+                        </ColumnListItem>                    
+                    </items>
+                </Table>
+            </content>
+        </Panel>
+    </Page>
+</mvc:View>

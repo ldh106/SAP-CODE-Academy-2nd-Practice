@@ -1,0 +1,12 @@
+{
+   "stdList" : [  
+      { "stdNo": "C2301", "stdName": "장호연", "skills": [ { "sCode":"S0001", "sName":"SAPUI5" } ] },
+      { "stdNo": "C2302", 
+                  "stdName": "박세찬",
+      "skills" : [  
+                     { "sCode":"S0001", "sName":"SAPUI5"  },
+                     { "sCode":"S0002", "sName":"ABAP"  }
+                  ]
+      }
+   ]   
+}

@@ -1,0 +1,22 @@
+<mvc:View controllerName="ncode.zc19w0209.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"    
+>
+    <Page id="page" title="{i18n>title}">
+        <Table items = "{/edus}">
+            <columns>
+                <Column ><header> <Text text = "교육코드"></Text> </header></Column>
+                <Column ><header> <Text text = "교육명"></Text> </header></Column>
+                <Column ><header> <Text text = "반수"></Text> </header></Column>                
+            </columns>
+            <items>
+                <ColumnListItem > 
+                    <cells> 
+                        <Text text = "{eCode}" />
+                        <Text text = "{eduName}"/>
+                    </cells> 
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>
