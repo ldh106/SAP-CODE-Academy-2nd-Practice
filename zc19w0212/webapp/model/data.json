@@ -1,0 +1,17 @@
+{
+   "skillList" : [  
+	{ "sCode":"S0001", "sName":"SAPUI5", "sPrice": 10000, "waers": "KRW"  },
+	{ "sCode":"S0002", "sName":"ABAP",   "sPrice": 20000, "waers": "KRW"  },
+	{ "sCode":"S0003", "sName":"CDS",    "sPrice": 20000, "waers": "KRW"  },
+	{ "sCode":"S0004", "sName":"RAP",    "sPrice": 30000, "waers": "KRW"  }
+   ],
+   "empList" : [  
+	   { "sCode":"S0001", "empNo":"10010001", "empName":"강길동", "skillGrade": "H" },
+       { "sCode":"S0001", "empNo":"10010002", "empName":"박길동", "skillGrade": "M" },
+       { "sCode":"S0002", "empNo":"10010001", "empName":"강길동", "skillGrade": "L" },
+	   { "sCode":"S0003", "empNo":"10010003", "empName":"홍길동", "skillGrade": "H" },
+	   { "sCode":"S0004", "empNo":"10010001", "empName":"강길동", "skillGrade": "M" },
+	   { "sCode":"S0004", "empNo":"10010003", "empName":"신길동", "skillGrade": "H" },
+	   { "sCode":"S0004", "empNo":"10010004", "empName":"정길동", "skillGrade": "L" }
+   ]   
+}

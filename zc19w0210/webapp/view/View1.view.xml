@@ -14,7 +14,7 @@
                 <Button text = "검색" press = "onSearch" ></Button>
             </HBox>
         </Panel>
-        <Table id = "tabSkill" items = "{mInfo>/skillList}" selectionChange="onChange" mode="SingleSelect">
+        <Table id = "tabSkill" items = "{mInfo>/skillList}" selectionChange="onChange" mode= "SingleSelectLeft" >
             <columns>
                 <Column ><header><Text text = "기술코드" ></Text></header></Column>
                 <Column ><header><Text text = "기술명"></Text></header></Column>

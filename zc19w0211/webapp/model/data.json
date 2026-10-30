@@ -1,0 +1,13 @@
+{
+    "skillList":[
+        {"sCode": "UX399", "sName": "JS", "sLevel": "L"},
+        {"sCode": "UX400", "sName": "SAPUI5", "sLevel": "H"},
+        {"sCode": "BC400", "sName": "ABAP Basic", "sLevel":"M"},
+        {"sCode": "BC414", "sName": "ABAP Dictionary", "sLevel": "H"}
+    ],
+    "levelList":[
+        {"lCode": "L", "lName": "하"},
+        {"lCode": "M", "lName": "중"},
+        {"lCode": "H", "lName": "상"}
+    ]
+}

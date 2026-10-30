@@ -1,0 +1,63 @@
+<mvc:View xmlns:core="sap.ui.core" 
+    xmlns:form="sap.ui.layout.form" 
+    controllerName="ncode.zc19w0212.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page id="page" title="{i18n>title}">
+        <form:SimpleForm >
+            <form:title>
+                <core:Title text = "기술리스트 조회">  </core:Title>
+            </form:title>            
+            <form:content>
+                <VBox >
+                    <HBox >
+                        <Input id = "inpStRange"></Input>
+                        <Text text = " ~ "></Text>
+                        <Input id = "inpEndRange"></Input>
+                        <Button press = "onPress" text = "기술코드 검색"></Button>
+                    </HBox>
+                    <Table id = "tabSkill" items = "{mInfo>/skillList}" mode = "SingleSelectMaster" selectionChange="onSkillSelection">
+                        <columns>
+                            <Column ><header><Text text = "기술코드"></Text></header> </Column>
+                            <Column ><header><Text text = "기술명"></Text></header> </Column>
+                            <Column ><header><Text text = "기술단가"></Text></header> </Column>
+                            <Column ><header><Text text = "통화"></Text></header> </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem >
+                                <cells>
+                                    <Text text="{mInfo>sCode}"></Text>
+                                    <Text text="{mInfo>sName}"></Text>
+                                    <Text text="{mInfo>sPrice}"></Text>
+                                    <Text text="{mInfo>waers}"></Text>
+                                </cells>                
+                            </ColumnListItem>           
+                        </items>        
+                    </Table>
+                </VBox>
+            </form:content>
+        </form:SimpleForm>
+        
+        <Panel id = "panelId" expandable="true"  headerText="사원정보리스트">            
+            <content>
+                <Table id = "tabEmp" items = "{mInfo>/empList}" >
+                    <columns>
+                        <Column ><header><Text text = "사원번호"></Text></header></Column>
+                        <Column ><header><Text text = "사원명"></Text></header></Column>
+                        <Column ><header><Text text = "기술숙련도"></Text></header></Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem >
+                            <cells>
+                                <Text text = "{mInfo>empNo}"></Text>
+                                <Text text = "{mInfo>empName}"></Text>
+                                <Text text = "{mInfo>skillGrade}"></Text>
+                            </cells>                
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </content>
+        </Panel>
+    </Page>
+</mvc:View>

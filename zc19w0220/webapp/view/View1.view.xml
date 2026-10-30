@@ -1,0 +1,31 @@
+<mvc:View controllerName="ncode.zc19w0220.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <VBox >
+            <Label text="Date"/>
+            <Input id = "inpDate" value="{/inpDate}"/>        
+            <DatePicker id="picDate" value = "{/picDate}" />
+            <!-- <Text text = "{/sPrice}"></Text> -->
+            <Text 
+                text = "{
+                    parts: [
+                        {path: '/sPrice'},
+                        {path: '/waers'}
+                    ],
+                    type: 'sap.ui.model.type.Currency'
+                }"/>        
+            <Input id = "inpCnt" 
+                value = "{
+                    path: '/totCnt',
+                    type: 'sap.ui.model.type.Integer',
+                    formatOptions:{
+                        groupingEnabled: true,
+                        groupingSepartor: ','
+                    }
+                }"
+            />
+            <Button text = "클릭" press = "onClick"></Button>
+        </VBox>    
+    </Page>
+</mvc:View>

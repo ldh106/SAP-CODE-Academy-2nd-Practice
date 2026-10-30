@@ -10,7 +10,7 @@ sap.ui.define([
             let oModel = new JSONModel();
             oModel.loadData("../model/data.json");
             this.getView().setModel(oModel, "mInfo");
-            let rModel = new JSONModel({rst:[]});
+            let rModel = new JSONModel({});
             this.getView().setModel(rModel, "rInfo")
         },
         onSearch(){
@@ -30,7 +30,7 @@ sap.ui.define([
             let oContext = oPara.getBindingContext("mInfo");            
             // let sPath = oContext.getPath();
             let oItem = oContext.getObject(); 
-            //객체를 복사할 수 있는건 없나요? oItem <-> mInfo간의 two-way 통신이라 rst값이 바뀌면            
+            //객체를 복사할 수 있는건 없나요? oItem <-> mInfo간의 two-way 통신이라 rst값이 바뀌면 원본 데이터도 바뀔 것 같습니다.          
             let oModel = oView.getModel("mInfo");
             oModel.setProperty("/rst", [oItem]);            
         }
