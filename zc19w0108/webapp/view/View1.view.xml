@@ -1,0 +1,15 @@
+<mvc:View controllerName="ncode.zc19w0108.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+>
+    <Page id="page" title="{i18n>title}">
+        <Label text = "학생번호"></Label>
+        <Input id = "inpSC"></Input>
+        <Button id = "btnSearch" press = "onClick"></Button>
+
+
+
+
+    </Page>
+</mvc:View>

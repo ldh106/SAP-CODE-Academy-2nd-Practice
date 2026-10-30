@@ -1,0 +1,34 @@
+<mvc:View controllerName="ncode.zc19w0201.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l = "sap.ui.layout"    
+>
+    <Page id="page" title="{i18n>title}">
+        <Button text = "Popup" press = "onPopup"></Button>
+        <l:Grid >
+            <l:content>
+                <Label text = "Last Name" labelFor = "inpLastName">             
+                    <layoutData>
+                        <l:GridData span = "L2 M4 S6" />
+                    </layoutData>
+                </Label>   
+                <Input id = "inpLastName" value = "Lim">
+                    <layoutData>
+                        <l:GridData span = "L2 M4 S6" />
+                    </layoutData>
+                </Input>
+                <Label text = "First Name" labelFor="inpFirstName">
+                    <layoutData>
+                        <l:GridData span = "L2 M4 S6" />
+                    </layoutData>
+                </Label>
+                <Input id = "inpFirstName" value = "DongHan">
+                    <layoutData>
+                        <l:GridData span = "L2 M4 S6" />
+                    </layoutData>
+                </Input>
+            </l:content>
+        </l:Grid>
+        
+    </Page>
+</mvc:View>
