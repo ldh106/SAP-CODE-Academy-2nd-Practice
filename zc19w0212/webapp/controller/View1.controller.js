@@ -12,7 +12,7 @@ sap.ui.define([
             oModel.loadData("../model/data.json");
             this.getView().setModel(oModel, "mInfo");     
             let tabEmp = this.getView().byId("tabEmp");       
-            let oFilter = new Filter("sCode", "EQ", "");
+            let oFilter = new Filter("sCode", "EQ", "");            
             tabEmp.getBinding("items").filter(oFilter);
         },
         onSkillSelection(oEvt){
@@ -23,9 +23,9 @@ sap.ui.define([
             let oModel = oView.getModel("mInfo");
             let oData = oModel.getProperty("sCode", oContext);
             let oFilter = new Filter("sCode", "EQ", oData);
-            tabEmp.getBinding("items").filter(oFilter);
+            tabEmp.getBinding("items").filter(oFilter);            
             let oPanel = oView.byId("panelId");
-            oPanel.setExpanded(true)            
+            oPanel.setExpanded(true);            
         },
         onPress(){
             let oView = this.getView()
