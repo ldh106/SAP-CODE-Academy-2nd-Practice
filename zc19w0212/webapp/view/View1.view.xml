@@ -46,6 +46,7 @@
                         <Column ><header><Text text = "사원번호"></Text></header></Column>
                         <Column ><header><Text text = "사원명"></Text></header></Column>
                         <Column ><header><Text text = "기술숙련도"></Text></header></Column>
+                        <Column ><header><Text text = "test"></Text></header></Column>
                     </columns>
                     <items>
                         <ColumnListItem >
@@ -53,6 +54,7 @@
                                 <Text text = "{mInfo>empNo}"></Text>
                                 <Text text = "{mInfo>empName}"></Text>
                                 <Text text = "{mInfo>skillGrade}"></Text>
+                                <Text text = "{mInfo>../skillList/0/sCode}"></Text>
                             </cells>                
                         </ColumnListItem>
                     </items>

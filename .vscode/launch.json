@@ -289,29 +289,109 @@
       }
     },
     {
-        "name": "zc19w0220-config1-flp",
-        "type": "node",
-        "request": "launch",
-        "cwd": "${workspaceFolder}/zc19w0220",
-        "runtimeExecutable": "npx",
-        "windows": {
-            "runtimeExecutable": "npx.cmd"
-        },
-        "runtimeArgs": [
-            "fiori",
-            "run"
-        ],
-        "args": [
-            "--open",
-            "test/flp.html#app-preview"
-        ],
-        "console": "internalConsole",
-        "internalConsoleOptions": "openOnSessionStart",
-        "outputCapture": "std",
-        "env": {
-            "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/zc19w0220\"}",
-            "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
-        }
+      "name": "zc19w0220-config1-flp",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/zc19w0220",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--open",
+        "test/flp.html#app-preview"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/zc19w0220\"}",
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start zc19w0221",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/zc19w0221",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--open",
+        "test/flp.html#app-preview"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "env": {
+        "DEBUG": "--inspect",
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/zc19w0221\"}"
+      }
+    },
+    {
+      "name": "Start zc19w0221 Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/zc19w0221",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--config",
+        "./ui5-local.yaml",
+        "--open",
+        "test/flp.html#app-preview"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/zc19w0221\"}"
+      }
+    },
+    {
+      "name": "zc19w0221-config1-flp",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/zc19w0221",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--open",
+        "test/flp.html#app-preview"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/zc19w0221\"}",
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
+        "FIORI_TOOLS_UI5_VERSION": "1.154.0",
+        "FIORI_TOOLS_UI5_URI": "https://ui5.sap.com"
+      }
     }
   ]
 }

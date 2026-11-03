@@ -1,0 +1,33 @@
+{
+   "emps" : [  
+	{ "pernr":"10010001", "eName":"강길동", "skillGrade": "H",
+	  "listSkill": [
+		{ "Scode":"S0001", "Sname":"SAPUI5", "Sprice": 10000, "Waers": "KRW", "skillGrade": "H"   },
+		{ "Scode":"S0002", "Sname":"ABAP",   "Sprice": 20000, "Waers": "KRW", "skillGrade": "M"   },
+		{ "Scode":"S0004", "Sname":"RAP",     "Sprice": 30000, "Waers": "KRW", "skillGrade": "H"   }
+	  ]
+	},
+	{ "pernr":"10010002", "eName":"박길동", "skillGrade": "M",
+	  "listSkill": [
+		{ "Scode":"S0001", "Sname":"SAPUI5", "Sprice": 10000, "Waers": "KRW", "skillGrade": "M"   }
+	  ]
+	},
+	{ "pernr":"10010003", "eName":"홍길동", "skillGrade": "H",
+	  "listSkill": [
+		{ "Scode":"S0002", "Sname":"ABAP",   "Sprice": 20000, "Waers": "KRW", "skillGrade": "M"   },
+		{ "Scode":"S0004", "Sname":"RAP",     "Sprice": 30000, "Waers": "KRW", "skillGrade": "H"   }
+	  ]	
+	},
+	{ "pernr":"10010004", "eName":"정길동", "skillGrade": "L",
+	  "listSkill": [
+		{ "Scode":"S0004", "Sname":"RAP",     "Sprice": 30000, "Waers": "KRW", "skillGrade": "H"   }
+	  ]
+	},
+	{ "pernr":"10010005", "eName":"문길동", "skillGrade": "M",
+	  "listSkill": [
+		{ "Scode":"S0003", "Sname":"CDS",     "Sprice": 20000, "Waers": "KRW", "skillGrade": "M"    },
+		{ "Scode":"S0004", "Sname":"RAP",     "Sprice": 30000, "Waers": "KRW", "skillGrade": "H"   }
+	  ]
+	}
+   ]   
+}

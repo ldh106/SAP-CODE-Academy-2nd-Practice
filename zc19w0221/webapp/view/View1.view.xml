@@ -1,0 +1,42 @@
+<mvc:View controllerName="ncode.zc19w0221.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <Table id="tabEmp"  items="{/emps}" mode="SingleSelectMaster" selectionChange="onSelectEmp" >
+            <columns>
+                <Column ><header><Text text="사원번호" /></header> </Column>
+                <Column ><header><Text text="사원명" /></header> </Column>
+                <Column ><header><Text text="기술숙련도" /></header> </Column>
+            </columns>
+            <items>
+                <ColumnListItem >
+                    <cells>
+                        <Text text="{pernr}" />
+                        <Text text="{eName}" />
+                        <Text text="{skillGrade}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        <Table id="tabSkill" headerText="보유 기술 리스트" items="{listSkill}" >
+            <columns>
+                <Column ><header><Text text="기술코드" /></header> </Column>
+                <Column ><header><Text text="기술명" /></header> </Column>
+                <Column ><header><Text text="기술단가" /></header> </Column>
+                <Column ><header><Text text="통화" /></header> </Column>
+                <Column ><header><Text text="기술숙련도" /></header> </Column>
+            </columns>
+            <items>
+                <ColumnListItem >
+                    <cells>
+                        <Text text="{Scode}" />
+                        <Text text="{Sname}" />
+                        <Text text="{Sprice}" />
+                        <Text text="{Waers}" />
+                        <Text text="{skillGrade}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>
