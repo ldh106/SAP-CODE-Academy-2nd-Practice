@@ -1,0 +1,34 @@
+{
+    "groupList": [
+        {"id": "1", "group": "1조"},
+        {"id": "2", "group": "2조"},
+        {"id": "3", "group": "3조"},
+        {"id": "4", "group": "4조"},
+        {"id": "5", "group": "5조"},
+        {"id": "6", "group": "6조"},
+        {"id": "0", "group": "반 전체조회"}
+    ],
+    "genderList": [
+        {"key": "M", "text": "남성"},
+        {"key": "F", "text": "여성"}
+    ],
+    "roleList": [
+        {"key": "L", "text": "조장"},
+        {"key": "S", "text": "부조장"},
+        {"key": "N", "text": "조원"}
+    ],
+    "majorList": [
+        {"key": "Y", "text": "전공"},
+        {"key": "N", "text": "비전공"}
+    ],
+    "sortList": [
+        {"key": "sId", "text": "학생번호"},
+        {"key": "sName", "text": "이름"},
+        {"key": "sBegda", "text": "지원일"}
+    ],
+    "sortDirList": [
+        {"key": "ASC", "text": "오름차순"},
+        {"key": "DESC", "text": "내림차순"}
+    ]
+}
+ 

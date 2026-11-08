@@ -1,0 +1,38 @@
+<mvc:View controllerName="ncode.zc319lev1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <!-- 반 코드 검색 시스템(패널로 구현) -->
+        <Panel expandable="true" expanded="true" headerText="반 코드 검색 시스템">
+            <content>
+                <VBox >
+                    <Label text = "소속반"></Label>
+                    <HBox >    
+                        <Input id = "inpCId" value = "CL303"></Input>
+                        <Button text = "검색" press = "onSearch" icon = "sap-icon://search"></Button>
+                    </HBox>
+                </VBox>
+            </content>            
+        </Panel>
+        <!-- 전체 학생정보를 테이블에서 보여줌. -->
+        <Table id = "tabStd" items = "{mInfo>/esStdList}" headerText="학생정보" >
+            <columns>
+                <Column ><header><Text text = "학생번호"></Text></header></Column>
+                <Column ><header><Text text = "학생명"></Text></header></Column>
+                <Column ><header><Text text = "소속반"></Text></header></Column>
+                <Column ><header><Text text = "지원일"></Text></header></Column>
+            </columns>
+            <items>
+                <ColumnListItem >
+                    <cells>
+                        <Text text = "{mInfo>sId}"></Text>
+                        <Text text = "{mInfo>sName}"></Text>
+                        <Text text = "{mInfo>cId}"></Text>
+                        <Text text = "{mInfo>sBegda}"></Text>
+                    </cells>
+                </ColumnListItem>
+            </items>        
+        </Table>
+
+    </Page>
+</mvc:View>

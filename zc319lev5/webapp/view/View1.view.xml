@@ -1,0 +1,226 @@
+ <mvc:View controllerName="ncode.zc319lev5.controller.View1"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Page id="idPage" title="{i18n>title}">
+        <!-- [Lev05] 검색 조건을 왼쪽 세로 → 위쪽 가로로 옮김. 테이블이 화면 전체 폭을 쓸 수 있음 -->
+        <!-- 검색 조건 패널 안에 반 검색 / 세부 검색 / 정렬 조건 3개 패널을 HBox로 가로로 나란히 배치, 바깥 패널에 초기화 버튼 -->
+        <!-- 각 패널 안의 항목은 VBox로 세로 배치 → 항목이 늘어도 화면 옆으로 벗어나지 않음 -->
+        <!--  · 반 검색: [검색] 버튼을 눌러야 적용 (반을 바꿀 때마다 바로 바뀌면 불편해서, Lev04 의도 유지) -->
+        <!--  · 세부 검색 / 정렬 조건: 콤보박스를 바꾸자마자 바로 적용 -->
+        <Panel expandable="true" expanded="true">
+            <headerToolbar>
+                <Toolbar >
+                    <Title text = "검색 조건"></Title>
+                    <ToolbarSpacer ></ToolbarSpacer>
+                    <Button text = "초기화" press = "onReset" icon = "sap-icon://reset"></Button>
+                </Toolbar>
+            </headerToolbar>
+            <content>
+                <HBox >
+                    <Panel>
+                        <headerToolbar>
+                            <Toolbar >
+                                <Title text = "반 검색"></Title>
+                                <ToolbarSpacer ></ToolbarSpacer>
+                                <Button text = "검색" press = "onSearch" icon = "sap-icon://search" type="Emphasized"></Button>
+                            </Toolbar>
+                        </headerToolbar>
+                        <content>
+                            <VBox >
+                            <VBox>
+                                <Label text = "소속된 반"></Label>
+                                <ComboBox id="cmbClass" items = "{mInfo>/classList}" selectedKey="CL303">
+                                    <items>
+                                        <core:Item key="{mInfo>cId}" text="{mInfo>cName}"></core:Item>
+                                    </items>
+                                </ComboBox>
+                            </VBox>
+                            </VBox>
+                        </content>
+                    </Panel>
+                    <Panel headerText="세부 검색">
+                        <content>
+                            <!-- 비워두면 전체. 콤보박스 목록은 전부 subData5Lev.json(gInfo)에서 바인딩 -->
+                            <VBox >
+                            <VBox>
+                                <Label text = "소속된 조"></Label>
+                                <ComboBox id="cmbGroup" selectionChange="onDetailChange" items = "{gInfo>/groupList}" selectedKey="2">
+                                    <items>
+                                        <core:Item key="{gInfo>id}" text="{gInfo>group}"></core:Item>
+                                    </items>
+                                </ComboBox>
+                            </VBox>
+                            <VBox>
+                                <Label text = "역할"></Label>
+                                <ComboBox id="cmbRole" selectionChange="onDetailChange" items = "{gInfo>/roleList}">
+                                    <items>
+                                        <core:Item key="{gInfo>key}" text="{gInfo>text}"></core:Item>
+                                    </items>
+                                </ComboBox>
+                            </VBox>
+                            <VBox>
+                                <Label text = "성별"></Label>
+                                <ComboBox id="cmbGender" selectionChange="onDetailChange" items = "{gInfo>/genderList}">
+                                    <items>
+                                        <core:Item key="{gInfo>key}" text="{gInfo>text}"></core:Item>
+                                    </items>
+                                </ComboBox>
+                            </VBox>
+                            <VBox>
+                                <Label text = "전공여부"></Label>
+                                <ComboBox id="cmbMajor" selectionChange="onDetailChange" items = "{gInfo>/majorList}">
+                                    <items>
+                                        <core:Item key="{gInfo>key}" text="{gInfo>text}"></core:Item>
+                                    </items>
+                                </ComboBox>
+                            </VBox>
+                            </VBox>
+                        </content>
+                    </Panel>
+                    <Panel headerText="정렬 조건">
+                        <content>
+                            <!-- 비워두면 컨트롤러에서 기본값(이름, 오름차순)으로 정렬함 -->
+                            <VBox >
+                            <VBox>
+                                <Label text = "정렬 기준"></Label>
+                                <ComboBox id="cmbSort" selectionChange="onSortChange" items = "{gInfo>/sortList}">
+                                    <items>
+                                        <core:Item key="{gInfo>key}" text="{gInfo>text}"></core:Item>
+                                    </items>
+                                </ComboBox>
+                            </VBox>
+                            <VBox>
+                                <Label text = "정렬 방향"></Label>
+                                <ComboBox id="cmbSortDir" selectionChange="onSortChange" items = "{gInfo>/sortDirList}">
+                                    <items>
+                                        <core:Item key="{gInfo>key}" text="{gInfo>text}"></core:Item>
+                                    </items>
+                                </ComboBox>
+                            </VBox>
+                            </VBox>
+                        </content>
+                    </Panel>
+                </HBox>
+            </content>
+        </Panel>
+
+        <!-- growingThreshold 5 → 10. 한 반(30명)을 보는데 More를 6번 누르던 걸 3번으로 줄임 -->
+        <!-- 정렬은 검색 조건에서 고르기 때문에 sorter는 XML이 아니라 컨트롤러에서 지정함 -->
+        <!-- 조 / 역할 / 성별 칸 추가: 조 단위로 검색하는 화면이라 조 구성을 테이블에서 바로 볼 수 있게 함 -->
+        <Table
+            id="tabStd" headerText="학생정보" growing="true" growingThreshold="10"
+            items = "{mInfo>/esStdList}"
+            mode = "SingleSelectMaster"   selectionChange="onTableSelectionChange"
+        >
+            <columns>
+                <Column ><header><Text text = "학생번호"></Text></header></Column>
+                <Column ><header><Text text = "학생명"></Text></header></Column>
+                <Column ><header><Text text = "조"></Text></header></Column>
+                <Column ><header><Text text = "역할"></Text></header></Column>
+                <Column ><header><Text text = "성별"></Text></header></Column>
+                <Column ><header><Text text = "소속반"></Text></header></Column>
+                <Column ><header><Text text = "지원일"></Text></header></Column>
+            </columns>
+            <items>
+                <ColumnListItem >
+                    <cells>
+                        <Text text = "{mInfo>sId}"></Text>
+                        <Text text = "{mInfo>sName}"></Text>
+                        <Text text = "{mInfo>sGroup}조"></Text>
+                        <!-- 행마다 setText를 할 수 없어서 컨트롤러 함수(formatRole, formatGender)를 formatter로 호출 -->
+                        <Text text = "{path: 'mInfo>sLeader', formatter: '.formatRole'}"></Text>
+                        <Text text = "{path: 'mInfo>sGender', formatter: '.formatGender'}"></Text>
+                        <Text text = "{mInfo>cId}"></Text>
+                        <Text text = "{mInfo>sBegda}"></Text>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+
+        <HBox >
+            <!-- 읽기 전용 값이라 Input(editable=false) 대신 Text 사용, id도 inp → txt 로 변경 -->
+            <!-- Label + Text를 HBox로 묶어서 "라벨  값"이 가로로 나오게 함 -->
+            <!-- 기본 / 소속 / 지원 정보 3묶음(VBox)을 가로로 나란히 배치 -->
+            <Panel id = "panStdDetail" expandable="true" headerText="{mInfo>sName}학생 상세정보" >
+                <HBox >
+                    <VBox class="sapUiTinyMarginEnd">
+                        <Title text = "기본 정보"></Title>
+                        <HBox alignItems="Center">
+                            <Label text="학생번호 : " class="sapUiTinyMarginEnd"></Label>
+                            <Text id="txtSId" text = "{mInfo>sId}"></Text>
+                        </HBox>
+                        <HBox alignItems="Center">
+                            <Label text="학생명 : " class="sapUiTinyMarginEnd"></Label>
+                            <Text id="txtSName" text = "{mInfo>sName}"></Text>
+                        </HBox>
+                        <HBox alignItems="Center">
+                            <Label text="성별 : " class="sapUiTinyMarginEnd"></Label>
+                            <Text id="txtSGender" text = "{path: 'mInfo>sGender', formatter: '.formatGender'}"></Text>
+                        </HBox>
+                    </VBox>
+                    <VBox class="sapUiTinyMarginEnd">
+                        <Title text = "소속 정보"></Title>
+                        <HBox alignItems="Center">
+                            <Label text="소속반 : " class="sapUiTinyMarginEnd"></Label>
+                            <Text id="txtSCId" text = "{mInfo>cId}"></Text>
+                        </HBox>
+                        <HBox alignItems="Center">
+                            <Label text="조 : " class="sapUiTinyMarginEnd"></Label>
+                            <Text id="txtSGroup" text = "{mInfo>sGroup}조"></Text>
+                        </HBox>
+                        <HBox alignItems="Center">
+                            <Label text="역할 : " class="sapUiTinyMarginEnd"></Label>
+                            <Text id="txtSLeader" text = "{path: 'mInfo>sLeader', formatter: '.formatRole'}"></Text>
+                        </HBox>
+                    </VBox>
+                    <VBox class="sapUiTinyMarginEnd">
+                        <Title text = "지원 정보"></Title>
+                        <HBox alignItems="Center">
+                            <Label text="지원일 : " class="sapUiTinyMarginEnd"></Label>
+                            <Text id="txtSBegda" text = "{mInfo>sBegda}"></Text>
+                        </HBox>
+                        <HBox alignItems="Center">
+                            <Label text="지원금 : " class="sapUiTinyMarginEnd"></Label>
+                            <Text id="txtSPrice"
+                                text = "{
+                                    parts: [
+                                        {path: 'mInfo>sPrice'},
+                                        {path: 'mInfo>sWaers'}
+                                    ],
+                                    type: 'sap.ui.model.type.Currency'
+                                }"
+                            ></Text>
+                        </HBox>
+                        <HBox >
+                            <Label text="전공여부 : " class="sapUiTinyMarginEnd"></Label>
+                            <CheckBox id = "chkMajor" editable="false" selected="{mInfo>sMajor}"></CheckBox>
+                        </HBox>
+                    </VBox>
+                </HBox>
+            </Panel>
+            <Panel id = "panClassDetail" expandable="true" headerText="{mInfo>cId} 반 정보">
+                <VBox >
+                        <HBox alignItems="Center">
+                            <Label text="소속반 :" class="sapUiTinyMarginEnd"></Label>
+                            <Text id="txtCId" text = "{mInfo>cId}"></Text>
+                        </HBox>
+                        <HBox alignItems="Center">
+                            <Label text="반 이름 :" class="sapUiTinyMarginEnd"></Label>
+                            <Text id="txtCName" text = "{mInfo>cName}"></Text>
+                        </HBox>
+                        <HBox alignItems="Center">
+                            <Label text="강의장 :" class="sapUiTinyMarginEnd"></Label>
+                            <Text id="txtCRoom" text = "{mInfo>cRoom}"></Text>
+                        </HBox>
+                        <HBox alignItems="Center">
+                            <Label text="강사"></Label>
+                            <Button id = "btnDetail" press = "onShowTeacherDetail" text="강사정보" icon = "sap-icon://search"></Button>
+                        </HBox>
+                </VBox>
+            </Panel>
+        </HBox>
+    </Page>
+</mvc:View>

@@ -1,0 +1,115 @@
+<mvc:View controllerName="ncode.zc319lev2.controller.View1"
+    xmlns:form="sap.ui.layout.form"  
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+<!-- id 값을 지정된 양식에 맞추지 않으면 에러가 나서 자동완성을 통해 정해진 양식을 지킴 -->
+    <Page id="idPage" title="{i18n>title}">
+        <Panel expandable="true" expanded="true" headerText="학생별 소속반/그룹 조회 시스템">
+            <content>
+                <VBox >
+                    <HBox >
+                        <Text text = "소속된 반"></Text>
+                        <!-- id 값을 지정된 양식에 맞추지 않으면 에러가 나서 자동완성을 통해 정해진 양식을 지킴 -->
+                        <ComboBox id="idClassListComboBox" items = "{mInfo>/classList}" selectedKey="CL303" selectionChange="onClassListComboBoxSelectionChange">
+                            <items>
+                                <core:Item key="{mInfo>cId}" text="{mInfo>cName}"></core:Item>
+                            </items>                        
+                        </ComboBox>
+                    </HBox>
+                    <HBox >
+                        <Text text = "소속된 조"></Text>
+                        <!-- id 값을 지정된 양식에 맞추지 않으면 에러가 나서 자동완성을 통해 정해진 양식을 지킴 -->
+                        <ComboBox  id="idGroupListComboBox" items = "{gInfo>/groupList}" selectedKey="2" selectionChange="onGroupListComboBoxSelectionChange" >
+                            <items>
+                                <core:Item key="{gInfo>id}" text="{gInfo>group}"></core:Item>
+                            </items>                        
+                        </ComboBox>
+                    </HBox>
+                </VBox>
+            </content>        
+        </Panel>
+        <!-- id 값을 지정된 양식에 맞추지 않으면 에러가 나서 자동완성을 통해 정해진 양식을 지킴 -->
+        <!-- growing 속성을 통해 한 번에 보이는 테이블의 컬럼수를 5개로 제한함. -->
+        <!-- sorter의 descending(내림차순) 속성을 false로 전환해 오름차순으로 변환. sort의 경로는 학생명으로 지정 -->
+        <Table 
+        id="idEsStdListTable" headerText="학생정보" growing="true" growingThreshold="5" 
+        items = "{
+            path: 'mInfo>/esStdList',
+            sorter: { path: 'sName', 
+                    descending: false}            
+        }" 
+        mode = "SingleSelectMaster"   selectionChange="onTableSelectionChange"
+        >
+            <columns>
+                <Column ><header><Text text = "학생번호"></Text></header></Column>
+                <Column ><header><Text text = "학생명"></Text></header></Column>
+                <Column ><header><Text text = "소속반"></Text></header></Column>
+                <Column ><header><Text text = "지원일"></Text></header></Column>
+            </columns>
+            <items>
+                <ColumnListItem >
+                    <cells>
+                        <Text text = "{mInfo>sId}"></Text>
+                        <Text text = "{mInfo>sName}"></Text>
+                        <Text text = "{mInfo>cId}"></Text>
+                        <Text text = "{mInfo>sBegda}"></Text>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        <Panel id = "panDetail" expandable="true" headerText="학생 상세정보">
+            <form:SimpleForm >
+                <form:title>
+                    <core:Title text = "{mInfo>sName}학생 상세정보"></core:Title>
+                </form:title>
+                <form:content>
+                    <VBox >
+                        <HBox >
+                            <Label text="학생번호"></Label>
+                            <Input id="inpSId" editable="false" value = "{mInfo>sId}"></Input>
+                        </HBox>
+                        <HBox >
+                            <Label text="학생명"></Label>
+                            <Input id="inpSName" editable="false" value = "{mInfo>sName}"></Input>
+                        </HBox>
+                        <HBox >
+                            <Label text="지원금"></Label>
+                            <Text 
+                                text = "{ 
+                                    parts: [
+                                        {path: 'mInfo>sPrice'},
+                                        {path: 'mInfo>sWaers'}                                    
+                                    ],
+                                    type: 'sap.ui.model.type.Currency'
+                                 }"
+                            ></Text>                            
+                        </HBox>
+                        <HBox >
+                            <Label text="성별"></Label>
+                            <Input id="inpSGender" description="{mInfo>sGenderT}" editable="false" value = "{mInfo>sGender}"></Input>
+                        </HBox>
+                        <HBox >
+                            <Label text="지원일"></Label>
+                            <Input id="inpSBegda" value = "{mInfo>sBegda}" editable="false"></Input>
+                        </HBox>
+                        <HBox >
+                            <Label text="조"></Label>
+                            <Input id="inpSGroup" editable="false" value = "{mInfo>sGroup}조"></Input>
+                        </HBox>
+                        <HBox >
+                            <Label text="조장"></Label>
+                            <Input id="inpSLeader" description="" value = "{mInfo>sLeader}" editable="false"></Input>
+                        </HBox>
+                        <HBox >
+                            <Label text="전공여부"></Label>
+                            <CheckBox id = "chkMajor" editable="false" ></CheckBox>
+                        </HBox>                        
+                    </VBox>
+                </form:content>
+            </form:SimpleForm>
+
+        </Panel>
+    </Page>
+</mvc:View>
